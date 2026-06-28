@@ -1,7 +1,7 @@
-<h1 align="center">馃幉 Random Picker 路 闅忔満鎶界宸ュ叿</h1>
+<h1 align="center">🎲 Random Picker · 随机抽签工具</h1>
 
 <p align="center">
-  <em>浠庢湰鍦拌〃鏍间腑闅忔満鎶藉彇浜哄憳鍚嶅崟锛屾敮鎸?Excel / CSV锛岃嚜甯?GUI 鍥惧舰鐣岄潰</em>
+  <em>从本地表格中随机抽取人员名单，支持 Excel / CSV，自带 GUI 图形界面</em>
 </p>
 
 <p align="center">
@@ -13,108 +13,119 @@
 
 ---
 
-**缁欒€佸笀/缁勭粐鑰呯殑宸ュ叿**锛氫粠 Excel 鎴?CSV 鍚嶅崟涓殢鏈烘娊鍙栨寚瀹氭暟閲忕殑浜猴紝骞跺睍绀洪檮鍔犱俊鎭紙瀛﹀彿銆佺彮绾х瓑锛夈€?
-| GUI 妯″紡 | CLI 妯″紡 |
+**给老师/组织者的工具**：从 Excel 或 CSV 名单中随机抽取指定数量的人，并展示附加信息（学号、班级等）。
+
+| GUI 模式 | CLI 模式 |
 |---|---|
-| 鍙屽嚮鍗崇敤锛屾墍瑙佸嵆鎵€寰?| 閫傚悎瀹氭椂/鎵归噺浠诲姟 |
-| 娴忚閫夋嫨鏂囦欢 鈫?杈撳叆浜烘暟 鈫?涓€閿娊绛?| `--file list.xlsx --count 5` |
+| 双击即用，所见即所得 | 适合定时/批量任务 |
+| 浏览选择文件 → 输入人数 → 一键抽签 | `--file list.xlsx --count 5` |
 
 ---
 
-## 猬囷笍 涓嬭浇
+## ⬇️ 下载
 
 <a href="https://github.com/Ni-ShuWu/random-picker/releases/download/v1.0.0/RandomPicker_Windows_v1.0.0.zip">
-  馃摜 涓嬭浇 Windows 鐗?(1.6 MB)
+  📥 下载 Windows 版 (1.6 MB)
 </a>
 <br>
 <a href="https://github.com/Ni-ShuWu/random-picker/archive/refs/tags/v1.0.0.zip">
-  馃摜 涓嬭浇婧愮爜
+  📥 下载源码
 </a>
 
-瑙ｅ帇 `RandomPicker_Windows_v1.0.0.zip` 鈫?鍙屽嚮 `鍚姩.bat` 鍗冲彲銆?
----
-
-## 鉁?鍔熻兘
-
-- **鏍煎紡鏀寔** 鈥?CSV / XLSX / TSV / TXT锛岃嚜鍔ㄨ瘑鍒?- **闅忔満鎶藉彇** 鈥?`std::mt19937_64` 楂橀殢鏈烘€э紝涓嶆斁鍥炴娊鏍?- **GUI 鍥惧舰鐣岄潰** 鈥?Win32 鍘熺敓锛屾棤闇€瀹夎浠讳綍妗嗘灦
-- **CLI 鍛戒护琛?* 鈥?閫傚悎鑷姩鍖栬剼鏈€佸畾鏃朵换鍔?- **AI 澧炲己** 鈥?鍙€夎皟鐢?DeepSeek / OpenAI 鐢熸垚鎺ㄨ崘璇?- **缁撴灉瀵煎嚭** 鈥?鏂囨湰 / CSV / 鍓创鏉匡紝UTF-8 缂栫爜
-- **绉嶅瓙澶嶇幇** 鈥?`--seed 42` 鍥哄畾绉嶅瓙锛屾娊绛剧粨鏋滃彲澶嶇幇
+解压 `RandomPicker_Windows_v1.0.0.zip` → 双击 `启动.bat` 即可。
 
 ---
 
-## 馃枼锔?鍥惧舰鐣岄潰
+## ✨ 功能
 
-| 姝ラ | 璇存槑 |
+- **格式支持** — CSV / XLSX / TSV / TXT，自动识别
+- **随机抽取** — `std::mt19937_64` 高随机性，不放回抽样
+- **GUI 图形界面** — Win32 原生，无需安装任何框架
+- **CLI 命令行** — 适合自动化脚本、定时任务
+- **AI 增强** — 可选调用 DeepSeek / OpenAI 生成推荐语
+- **结果导出** — 文本 / CSV / 剪贴板，UTF-8 编码
+- **种子复现** — `--seed 42` 固定种子，抽签结果可复现
+
+---
+
+## 🖥️ 图形界面
+
+| 步骤 | 说明 |
 |------|------|
-| 鈶?閫夋枃浠?| 鐐瑰嚮銆屾祻瑙堚€︺€嶉€夋嫨 `.csv` 鎴?`.xlsx` |
-| 鈶?濉汉鏁?| 杈撳叆瑕佹娊鍙栫殑鏁伴噺 |
-| 鈶?鍙€夛細AI | 鍕鹃€夈€屽惎鐢?AI銆嶏紝濉叆 DeepSeek/OpenAI API Key |
-| 鈶?寮€濮?| 鐐瑰嚮銆岎煄?寮€濮嬫娊绛俱€?|
-| 鈶?瀵煎嚭 | 淇濆瓨涓?txt/csv锛屾垨澶嶅埗鍒板壀璐存澘 |
+| ① 选文件 | 点击「浏览…」选择 `.csv` 或 `.xlsx` |
+| ② 填人数 | 输入要抽取的数量 |
+| ③ 可选：AI | 勾选「启用 AI」，填入 DeepSeek/OpenAI API Key |
+| ④ 开始 | 点击「🎲 开始抽签」 |
+| ⑤ 导出 | 保存为 txt/csv，或复制到剪贴板 |
 
 ---
 
-## 鈱笍 鍛戒护琛?
+## ⌨️ 命令行
+
 ```shell
-# 鍩烘湰鐢ㄦ硶
+# 基本用法
 random_picker.exe --file students.xlsx --count 3
 
-# 淇濆瓨缁撴灉
+# 保存结果
 random_picker.exe --file list.csv --count 5 --output result.txt
 
-# 鎸囧畾闅忔満绉嶅瓙锛堝鐜扮粨鏋滐級
+# 指定随机种子（复现结果）
 random_picker.exe --file list.csv --count 3 --seed 42
 
-# 鍚敤 AI 鎺ㄨ崘锛圖eepSeek 榛樿锛?random_picker.exe --file list.csv --count 3 --with-ai --api-key sk-xxx
+# 启用 AI 推荐（DeepSeek 默认）
+random_picker.exe --file list.csv --count 3 --with-ai --api-key sk-xxx
 
-# 鑷畾涔?AI 鎺ュ彛锛堝鎹㈠叾浠?API锛?random_picker.exe --file list.csv --count 3 --with-ai --api-key sk-xxx --api-baseurl https://api.openai.com
+# 自定义 AI 接口（如换其他 API）
+random_picker.exe --file list.csv --count 3 --with-ai --api-key sk-xxx --api-baseurl https://api.openai.com
 ```
 
-瀹屾暣鍙傛暟锛歚random_picker.exe --help`
+完整参数：`random_picker.exe --help`
 
 ---
 
-## 馃搵 琛ㄦ牸鏍煎紡
+## 📋 表格格式
 
-绗竴琛屽繀椤绘槸琛ㄥご锛岃嚦灏戝寘鍚?`濮撳悕` 鍒楋紙涔熻瘑鍒?`name`銆乣xingming`銆乣鍚嶅瓧`銆乣student`銆乣瀛︾敓`锛夈€?
+第一行必须是表头，至少包含 `姓名` 列（也识别 `name`、`xingming`、`名字`、`student`、`学生`）。
+
 ```csv
-濮撳悕,瀛﹀彿,鐝骇,鎬у埆,澶囨敞
-寮犱笁,2024001,璁＄畻鏈轰竴鐝?鐢?鐝
-鏉庡洓,2024002,璁＄畻鏈轰竴鐝?鐢?
-鐜嬩簲,2024003,璁＄畻鏈轰竴鐝?濂?
+姓名,学号,班级,性别,备注
+张三,2024001,计算机一班,男,班委
+李四,2024002,计算机一班,男,
+王五,2024003,计算机一班,女,
 ```
 
 ---
 
-## 馃敡 浠庢簮鐮佹瀯寤?
-**渚濊禆**锛欳Make 3.16+銆丟CC 14+ / MSVC 2022銆乴ibzip
+## 🔧 从源码构建
+
+**依赖**：CMake 3.16+、GCC 14+ / MSVC 2022、libzip
 
 ```bash
-# MSYS2 UCRT64 缁堢
+# MSYS2 UCRT64 终端
 pacman -S --needed mingw-w64-ucrt-x86_64-{gcc,cmake,ninja,libzip,zlib}
 cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
-# 鎴愬搧: build/random_picker.exe
+# 成品: build/random_picker.exe
 ```
 
-Windows 涓€閿瀯寤猴細鍙屽嚮 `build.bat`
+Windows 一键构建：双击 `build.bat`
 
 ---
 
-## 馃П 鎶€鏈爤
+## 🧱 技术栈
 
-| 妯″潡 | 瀹炵幇 |
+| 模块 | 实现 |
 |------|------|
-| 闅忔満鏁?| `std::random_device` + `std::mt19937_64` |
-| CSV 瑙ｆ瀽 | 鎵嬪啓锛堟敮鎸佸紩鍙枫€佽浆涔夈€丅OM锛?|
-| XLSX 瑙ｆ瀽 | libzip 瑙ｅ帇 + XML 瑙ｆ瀽锛坺ip/xml锛?|
-| HTTP | WinHTTP锛堢郴缁熷師鐢燂級 |
-| GUI | Win32 API锛圕ommon Controls 6锛?|
-| AI | OpenAI / DeepSeek Chat Completions 鍗忚 |
-| 鏃ュ織 | 鍐呯疆锛堢骇鍒帶鍒躲€佹枃浠惰緭鍑猴級 |
+| 随机数 | `std::random_device` + `std::mt19937_64` |
+| CSV 解析 | 手写（支持引号、转义、BOM） |
+| XLSX 解析 | libzip 解压 + XML 解析（zip/xml） |
+| HTTP | WinHTTP（系统原生） |
+| GUI | Win32 API（Common Controls 6） |
+| AI | OpenAI / DeepSeek Chat Completions 协议 |
+| 日志 | 内置（级别控制、文件输出） |
 
 ---
 
-## 馃搫 License
+## 📄 License
 
 MIT
