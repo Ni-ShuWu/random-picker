@@ -129,3 +129,7 @@ Windows 一键构建：双击 `build.bat`
 ## 📄 License
 
 MIT
+
+## 温馨提醒
+
+「本项目大部分由AI构建」是应付班任写的
